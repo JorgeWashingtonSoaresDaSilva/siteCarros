@@ -1,0 +1,38 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-color: #9e9d89;
+	color: white;
+}
+form{
+	width: 400px;
+	height: 460px;
+	text-align: left;
+	margin: 14px 520px;
+	background-color: #9e9d94;
+	color: white;
+	border: solid;
+	border-color: #9e9d10;
+	padding-left: 10px;
+}
+
+form > textarea{
+width: 264px;
+height: 100px;
+margin: -15px 78px;
+}
+form > h1{
+	text-align: center;
+}
+div.formu > h1{
+	text-align: center;
+	background-color: #9e9d10;
+	width: 100%;
+	height: 80px;
+	padding-top: 20px;
+	
+}
+div.formu{
+	margin: -20px 0px;
+}
