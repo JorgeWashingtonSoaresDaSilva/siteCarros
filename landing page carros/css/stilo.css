@@ -1,23 +1,28 @@
 body{
-	background-color: #9e9d89;
+	background-color: #B42B51;
 	text-align: center;
 	}
 
-div.Titulo{
-		width: 100%;
+div.Cabecalho{
+		width: 102%;
 		height: 120px;
-		background-color: #9e9d64;
-		margin: -125px 0px;
+		background-color: #7D1935;
+		margin-top: -145px;
+		margin-left: -8px;
+		margin-right: 0px;
+		margin-bottom: 0px;
 
 	}
-div.Titulo h1,h3{
-	color: white
+div.Cabecalho h1,h3.sub{
+	color: white;
+	padding-top: 10px;
+
 }
 div.logo{
 		width: 150px;
 		height: 150px;
-		background-color: #9e9d68;
-		margin: -52px 294px;
+		background-color: #B42B51;
+		margin: -32px 294px;
 
 		
 	}
@@ -25,29 +30,27 @@ div.logo{
 div.colus1{
 		width: 300px;
 		height: 280px;
-		background-color: white;
 		margin: 280px 240px;
 
 	}
 div.colus2{
 		width: 300px;
 		height: 280px;
-		background-color: white;
 		margin: -561px 560px;
 
 	}
 div.colus3{
 		width: 300px;
 		height: 280px;
-		background-color: white;
 		margin: 280px 880px;
 
 	}
 div.imagem{
 		width: 300px;
 		height: 280px;
-		background-color: #9e9d44;
+		background-color: #420516;
 		margin: 0px 0px;
+		padding-top: 25px;
 
 	}
 		
@@ -69,3 +72,17 @@ div.colus3 > p{
 div.colus3 > h1{
 	color: white;
 }
+div.Rodape{
+		width: 102%;
+		height: 120px;
+		background-color: #7D1935;
+		margin-top: 725px 0px;
+
+		margin-left: -8px;
+		margin-right: 0px;
+		margin-bottom: -8px;
+
+	}
+div.Rodape h1,h3.Rodape{
+	color: white;
+	padding-top: 60px;
