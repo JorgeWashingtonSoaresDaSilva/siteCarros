@@ -1,16 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 body{
+
+	font-family: 'Roboto', sans-serif;
+		
 	background-color: #B42B51;
 	text-align: center;
 	}
 
+
+
 div.Cabecalho{
-		width: 102%;
-		height: 120px;
-		background-color: #7D1935;
-		margin-top: -145px;
-		margin-left: -8px;
-		margin-right: 0px;
-		margin-bottom: 0px;
+	width: 102%;
+	height: 120px;
+	background-color: #420516;
+	margin-top: -145px;
+	margin-left: -8px;
+	margin-right: 0px;
+	margin-bottom: 0px;
 
 	}
 div.Cabecalho h1,h3.sub{
@@ -18,71 +25,64 @@ div.Cabecalho h1,h3.sub{
 	padding-top: 10px;
 
 }
+
 div.logo{
-		width: 150px;
-		height: 150px;
-		background-color: #B42B51;
-		margin: -32px 294px;
+	width: 150px;
+	height: 150px;
+	background-color: #B42B51;
+	margin: -32px 294px;
 
 		
-	}
+}
 
 div.colus1{
-		width: 300px;
-		height: 280px;
-		margin: 280px 240px;
+	width: 300px;
+	height: 280px;
+	margin: 280px 240px;
 
-	}
+
+}
 div.colus2{
-		width: 300px;
-		height: 280px;
-		margin: -561px 560px;
+	width: 300px;
+	height: 280px;
+	margin: -561px 560px;
 
-	}
+}
 div.colus3{
-		width: 300px;
-		height: 280px;
-		margin: 280px 880px;
+	width: 300px;
+	height: 280px;
+	margin: 280px 880px;
 
-	}
+}
 div.imagem{
-		width: 300px;
-		height: 280px;
-		background-color: #420516;
-		margin: 0px 0px;
-		padding-top: 25px;
-
-	}
+	width: 300px;
+	height: 390px;
+	background-color: #420516;
+	margin: 6px 0px;
+	padding-top: 25px;
+	border-style: solid;
+	border-color: #7D1935;
+	border-width: 6px;		
 		
-div.colus1 > p{
-	color: white;
-}
-div.colus1 > h1{
-	color: white;
-}
-div.colus2 > p{
-	color: white;
-}
-div.colus2 > h1{
-	color: white;
-}
-div.colus3 > p{
-	color: white;
-}
-div.colus3 > h1{
-	color: white;
+
 }
 div.Rodape{
-		width: 102%;
-		height: 120px;
-		background-color: #7D1935;
-		margin-top: 725px 0px;
+	width: 102%;
+	height: 120px;
+	background-color: #420516;
+	margin-top: 145px;
+	margin-left: -8px;
+	margin-right: 0px;
+	margin-bottom: 0px;
 
-		margin-left: -8px;
-		margin-right: 0px;
-		margin-bottom: -8px;
-
-	}
-div.Rodape h1,h3.Rodape{
+}
+div.Rodape > h1, h3{
 	color: white;
-	padding-top: 60px;
+	padding-top: 30px;
+
+}
+div.imagem > h1,p{
+	color: white;
+
+}		
+
