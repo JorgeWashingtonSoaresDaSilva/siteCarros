@@ -25,6 +25,7 @@ public class calculadoraImc extends operacoImc{
 	private JTextArea textImc;
 	public double imcResult;
 	public String resultado;
+	public boolean isNumeric1,isNumeric2 ;
 	operacoImc imcl = new operacoImc();
 
 	/**
@@ -98,38 +99,50 @@ public class calculadoraImc extends operacoImc{
 		JButton btnCalcular = new JButton("Calcular");
 		btnCalcular.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				imcl.setAlturaM(Double.parseDouble(textAltura.getText().replace(",", ".")));
-				imcl.setMassaKg(Double.parseDouble(textMassa.getText().replace(",", ".")));
-				imcl.setImc(imcl.calcImc( imcl.getMassaKg(), imcl.getAlturaM()));
-				imcResult = imcl.getImc();
-				String.valueOf(imcResult);
-				resultado = String.format("%.2f",imcResult);
-				if(imcResult <17) {
-					textImc.setText(resultado.replace(",", ".")+"  Muito Abaixo do Peso !!") ;
-				}else {
-					if(imcResult >= 17 & imcResult <= 18.5) {
-						textImc.setText(resultado.replace(",", ".")+"  Abaixo do Peso !!") ;
+				
+			// verifica se é numero ou letra que foi digitado
+			   isNumeric1 =  textAltura.getText().matches("[+-]?\\d*(\\.\\d+)?");
+			   System.out.println(isNumeric1);
+			   isNumeric2 =  textMassa.getText().matches("[+-]?\\d*(\\.\\d+)?");
+			   System.out.println(isNumeric2); 
+			   
+			// verifica se é verdade ou não se for executa a conta normalmente
+		       if(isNumeric1 == true & isNumeric2 == true) {
+		    	   imcl.setAlturaM(Double.parseDouble(textAltura.getText().replace(",", ".")));
+				   imcl.setMassaKg(Double.parseDouble(textMassa.getText().replace(",", ".")));
+					
+		    	   imcl.setImc(imcl.calcImc( imcl.getMassaKg(), imcl.getAlturaM()));
+					imcResult = imcl.getImc();
+					String.valueOf(imcResult);
+					resultado = String.format("%.2f",imcResult);
+					if(imcResult <17) {
+						textImc.setText(resultado.replace(",", ".")+"  Muito Abaixo do Peso !!") ;
 					}else {
-						if(imcResult >= 18.5 & imcResult < 25) {
-							textImc.setText(resultado.replace(",", ".")+"  Peso Ideal") ;
-							
+						if(imcResult >= 17 & imcResult <= 18.5) {
+							textImc.setText(resultado.replace(",", ".")+"  Abaixo do Peso !!") ;
 						}else {
-							if(imcResult >= 25 & imcResult < 30) {
-								textImc.setText(resultado.replace(",", ".")+"  Sobrepeso !!") ;
+							if(imcResult >= 18.5 & imcResult < 25) {
+								textImc.setText(resultado.replace(",", ".")+"  Peso Ideal") ;
+								
 							}else {
-								if(imcResult >= 30 & imcResult < 35) {
-									textImc.setText(resultado.replace(",", ".")+"  Obesidade!!!") ;
+								if(imcResult >= 25 & imcResult < 30) {
+									textImc.setText(resultado.replace(",", ".")+"  Sobrepeso !!") ;
 								}else {
-									if(imcResult >= 35 & imcResult < 40) {
-										textImc.setText(resultado.replace(",", ".")+"  Obesidade Severa !!!") ;
+									if(imcResult >= 30 & imcResult < 35) {
+										textImc.setText(resultado.replace(",", ".")+"  Obesidade!!!") ;
 									}else {
-										textImc.setText(resultado.replace(",", ".")+"  Obesidade Morbida !!!!!") ;
+										if(imcResult >= 35 & imcResult < 40) {
+											textImc.setText(resultado.replace(",", ".")+"  Obesidade Severa !!!") ;
+										}else {
+											textImc.setText(resultado.replace(",", ".")+"  Obesidade Morbida !!!!!") ;
+										}
 									}
 								}
 							}
 						}
 					}
-				}
+		       }
+				
 				
 				
 			}
