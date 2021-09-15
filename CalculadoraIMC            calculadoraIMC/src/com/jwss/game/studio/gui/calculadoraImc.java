@@ -6,6 +6,7 @@ import java.awt.EventQueue;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -108,6 +109,9 @@ public class calculadoraImc extends operacoImc{
 			   
 			// verifica se é verdade ou não se for executa a conta normalmente
 		       if(isNumeric1 == true & isNumeric2 == true) {
+		    	   // seta a cor dos campos para cor original
+		    	   textAltura.setBackground(new Color(0, 0, 139));
+		    	   textMassa.setBackground(new Color(0, 0, 139));
 		    	   imcl.setAlturaM(Double.parseDouble(textAltura.getText().replace(",", ".")));
 				   imcl.setMassaKg(Double.parseDouble(textMassa.getText().replace(",", ".")));
 					
@@ -141,11 +145,39 @@ public class calculadoraImc extends operacoImc{
 							}
 						}
 					}
-		       }
+					
+		       }else {
+					
+					// verifica se foi digitado valores invalidos 
+					// seta uma cor para mostrar onde ta o erro
+					if(isNumeric1 == false & isNumeric2 == true) {
+						textAltura.setBackground(Color.RED);
+						JOptionPane.showMessageDialog(null, "Valores invalidos :( "
+								+ " Digite em Massa Altura '1.74' ");
+						
+					}else {
+						textAltura.setBackground(new Color(0, 0, 139));
+					}
+					if(isNumeric2 == false & isNumeric1 == true) {
+						textMassa.setBackground(Color.RED);
+						JOptionPane.showMessageDialog(null, "Valores invalidos :( "
+								+ " Digite em Massa '60.500' ");
+						
+					}else {
+						textMassa.setBackground(new Color(0, 0, 139));
+					}
+					if(isNumeric1 == false & isNumeric2 == false) {
+						textAltura.setBackground(Color.RED);
+						textMassa.setBackground(Color.RED);
+						JOptionPane.showMessageDialog(null, "Valores invalidos :( "
+								+ " Digite em Massa '60.500' em Altura '1.74' ");
+					}
+				}
 				
 				
 				
 			}
+			
 		});
 		btnCalcular.setForeground(Color.WHITE);
 		btnCalcular.setBackground(new Color(0, 0, 128));
