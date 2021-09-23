@@ -70,17 +70,24 @@ div.Rodape{
 	width: 102%;
 	height: 120px;
 	background-color: #420516;
-	margin-top: 145px;
+	margin-top: 135px;
 	margin-left: -8px;
 	margin-right: 0px;
 	margin-bottom: 0px;
+	
+
 
 }
-div.Rodape > h1, h3{
+div.Rodape > p.rod{
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-size: 15px;
+	text-align: center;
 	color: white;
-	padding-top: 30px;
-
+	font-display: optional;
+	padding: 4%;
 }
+
 div.imagem > h1,p{
 	color: white;
 
