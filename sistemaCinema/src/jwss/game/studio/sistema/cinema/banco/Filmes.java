@@ -18,7 +18,7 @@ public class Filmes {
 		this.preco1 = preco1;
 	}
 	public void setPreco2(double preco2) {
-		this.preco2 = (preco1 /2);;
+		this.preco2 = preco2;
 	}
 	
 	
