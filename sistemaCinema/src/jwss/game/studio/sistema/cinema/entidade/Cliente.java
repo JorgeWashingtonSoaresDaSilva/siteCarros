@@ -7,7 +7,7 @@ public class Cliente {
 	private String nome;
 	private String idade;
 	Date data = new Date();
-	SimpleDateFormat formatar = new SimpleDateFormat("y");
+	SimpleDateFormat formatar = new SimpleDateFormat("yyyy");
 
 	
 	// metodos publicos seters 
