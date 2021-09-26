@@ -13,8 +13,8 @@ public class Main {
 		boolean consultas =true , cadastros = true, atualizacoes = true, vendaIngressos = true;
 		String opcao1 = "0", opcao = "0";
 		Scanner teclado = new Scanner(System.in);
-		ArrayList<Cliente> clientes = new ArrayList();
-		ArrayList<Filmes> bancoFilmes = new ArrayList();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		ArrayList<Filmes> bancoFilmes = new ArrayList<Filmes>();
 		
 		// Cadastro de filmes
 		Filmes filme0 = new Filmes();
@@ -121,8 +121,8 @@ public class Main {
 									System.out.println("| id : "+i);
 									System.out.println("| Nome do Filme: "+filme.getNome());
 									System.out.println("| Horário : "+filme.getHorario());
-									System.out.println("| Preço da entrada inteira R$: "+filme.getPreco1());
-									System.out.println("| Preço da meia entrada  R$: "+filme.getPreco2());
+									System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
+									System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 									System.out.println("================================================");
 									}
 								break;
@@ -201,8 +201,8 @@ public class Main {
 									System.out.println("| id : "+i);
 									System.out.println("| Nome do Filme: "+filme.getNome());
 									System.out.println("| Horário : "+filme.getHorario());
-									System.out.println("| Preço da entrada inteira R$: "+filme.getPreco1());
-									System.out.println("| Preço da meia entrada  R$: "+filme.getPreco2());
+									System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
+									System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 									System.out.println("================================================");
 									}
 								break;
@@ -220,8 +220,8 @@ public class Main {
 										System.out.println("| id : "+i);
 										System.out.println("| Nome do Filme: "+filme.getNome());
 										System.out.println("| Horário : "+filme.getHorario());
-										System.out.println("| Preço da entrada inteira R$: "+filme.getPreco1());
-										System.out.println("| Preço da meia entrada  R$: "+filme.getPreco2());
+										System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
+										System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 										System.out.println("================================================");
 										encontrou = true;
 										break;
@@ -436,8 +436,8 @@ public class Main {
 								System.out.println("| id : "+i);
 								System.out.println("| Nome do Filme: "+filme.getNome());
 								System.out.println("| Horário : "+filme.getHorario());
-								System.out.println("| Preço da entrada inteira R$: "+filme.getPreco1());
-								System.out.println("| Preço da meia entrada  R$: "+filme.getPreco2());
+								System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
+								System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 								System.out.println("================================================");
 								}
 							
@@ -466,19 +466,22 @@ public class Main {
 								Cliente clienteb = clientes.get(idcli);
 								Filmes filme = bancoFilmes.get(idfil);
 								System.out.println("| Id: "+idcli+" Nome: "+clienteb.getNome()+" Idade: "+
-								clienteb.getIdade());
+								clienteb.getIdade()+" Anos");
 								System.out.println("| Id: "+idfil+" Nome: "+filme.getNome()+" Horário: "+
 										filme.getHorario());
-								System.out.println("| Meia Entrada: R$"+filme.getPreco2());
-								System.out.println("| Entrada Inteira: R$"+filme.getPreco1());
-								if(Integer.parseInt(clienteb.getIdade()) < 7 || Integer.parseInt(clienteb.getIdade()) >=65) {
+								System.out.println("| Meia Entrada: R$"+String.format("%.2f", filme.getPreco2()));
+								System.out.println("| Entrada Inteira: R$"+String.format("%.2f", filme.getPreco1()));
+								if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
+									System.out.println("|");
 									System.out.println("| Você paga Meia Entrada");
 									System.out.println("============== continuando compra ================");
-									System.out.println("| Total a Pagar: "+filme.getPreco2());
+									System.out.println("| Total a Pagar: "+String.format("%.2f", filme.getPreco2()));
+									
 								}else {
+									System.out.println("|");
 									System.out.println("| Você paga Entrada Inteira");
 									System.out.println("============== continuando compra ================");
-									System.out.println("| Total a Pagar: "+filme.getPreco1());
+									System.out.println("| Total a Pagar: "+String.format("%.2f", filme.getPreco1()));
 								}
 								System.out.println("|Escolha a forma de padamento:");
 								System.out.println("| [1] Avista");
@@ -489,24 +492,49 @@ public class Main {
 								switch(forPag) {
 									case "1":{
 										System.out.println("-----Você pagou avista-----");
-										if(Integer.parseInt(clienteb.getIdade()) < 7 || Integer.parseInt(clienteb.getIdade()) >=65) {
-				
-											System.out.println("| Total a Pagar: "+filme.getPreco2());
+										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
+											System.out.println("|");
+											System.out.println("| Ingresso do filme: "+filme.getNome());
+											System.out.println("| Horário da sessão: "+filme.getHorario());
+											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$ "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("|");
+											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("| Bom Filme");
+											System.out.println("|-----------------------------------");
 										}else {
-											System.out.println("| Total a Pagar: "+filme.getPreco1());
+											System.out.println("|");
+											System.out.println("| Ingresso do filme: "+filme.getNome());
+											System.out.println("| Horário da sessão: "+filme.getHorario());
+											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$ 00.00");
+											System.out.println("|");
+											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Bom Filme");
+											System.out.println("|------------------------------------");
 										}
 									break;
 									}
 									case "2":{
 										System.out.println("-----Você pagou com cartão de crédito-----");
-										if(Integer.parseInt(clienteb.getIdade()) < 7 || Integer.parseInt(clienteb.getIdade()) >=65) {
+										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
 											System.out.println("|");
-											System.out.println("| Total Pago: "+filme.getPreco2());
+											System.out.println("| Ingresso do filme: "+filme.getNome());
+											System.out.println("| Horário da sessão: "+filme.getHorario());
+											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$ "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("|");
+											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
 											System.out.println("| Bom Filme");
 											System.out.println("|-----------------------------------");
 										}else {
 											System.out.println("|");
-											System.out.println("| Total Pago: "+filme.getPreco1());
+											System.out.println("| Ingresso do filme: "+filme.getNome());
+											System.out.println("| Horário da sessão: "+filme.getHorario());
+											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$ 00.00");
+											System.out.println("|");
+											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
 											System.out.println("| Bom Filme");
 											System.out.println("|------------------------------------");
 										}
@@ -549,7 +577,9 @@ public class Main {
 					break;
 				}
 		}
+			
 		}
+		teclado.close();
 		
 		
 		// mostrar valores 
