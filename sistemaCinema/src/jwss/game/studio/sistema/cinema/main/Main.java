@@ -1,5 +1,6 @@
 package jwss.game.studio.sistema.cinema.main;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +11,9 @@ public class Main {
 
 	public static void main(String[] args) {
 		// capitura de dados pelo teclado
+		
+		
+		
 		boolean consultas =true , cadastros = true, atualizacoes = true, vendaIngressos = true;
 		String opcao1 = "0", opcao = "0";
 		Scanner teclado = new Scanner(System.in);
@@ -66,7 +70,7 @@ public class Main {
 			System.out.println("| [2] Consultas                        |");
 			System.out.println("| [3] Atualizações                     |");
 			System.out.println("| [4] Venda de Igressos                |");
-			System.out.println("| [ ] ------------------------         |");
+			System.out.println("| [5] Limpar a Tela                    |");
 			System.out.println("| [6] Sair                             |");
 			System.out.println("========================================");
 			System.out.print("Digite opção desejada:");
@@ -77,6 +81,7 @@ public class Main {
 			
 			
 				case "1":{
+					limpaTela(180);
 					if(  opcao.equals("1") ) {
 						opcao1 = "1";
 						consultas  = false;
@@ -84,13 +89,15 @@ public class Main {
 						vendaIngressos = false;
 						cadastros = true;
 					}
+					
+				
 					while(cadastros) {
 						System.out.println("============= Cadastros ===============");
 						System.out.println("| [1] Cadastrar filme                 |");
 						System.out.println("| [2] Listar todos os filmes          |");
 						System.out.println("| [3] Cadastrar cliente               |");
 						System.out.println("| [4] Listar todos os clientes        |");
-						System.out.println("| [ ] ------------------------        |");
+						System.out.println("| [5] Limpar a Tela                   |");
 						System.out.println("| [6] Voltar                          |");
 						System.out.println("=======================================");
 						System.out.print("Digite opção desejada:");
@@ -98,6 +105,10 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
+								limpaTela(15);
+								System.out.println("> Abaixo preencha dados do filme a ser cadastrado no sistema");
+								
+								limpaTela(2);
 									System.out.println("====== Cadastro de Filme ======");
 									
 									System.out.print("Digite nome do filme: ");
@@ -120,9 +131,14 @@ public class Main {
 									filme.setPreco2(Double.parseDouble(preco2));
 									
 									bancoFilmes.add(filme);
+									limpaTela(180);
+									System.out.println("> Filme cadastrado com sucesso");
+									limpaTela(2);
+								
 								break;
 							}
 							case "2":{
+								limpaTela(180);
 									System.out.println("============== Filmes Cadastrados ================");
 									for(int i = 0; i < bancoFilmes.size(); i++) {
 									Filmes filme = bancoFilmes.get(i);
@@ -133,9 +149,19 @@ public class Main {
 									System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 									System.out.println("================================================");
 									}
+									limpaTela(1);
+									
+								
+									System.out.println("> Acima a lista de filme cadastrado no sistema");
+									
+									limpaTela(2);
 								break;
 							}
 							case "3":{
+								limpaTela(15);
+								System.out.println("> Abaixo preencha dados do cliente a ser cadastrado no sistema");
+								
+								limpaTela(2);
 									System.out.println("====== Cadastro de Cliente ======");
 									
 									System.out.print("Digite nome do cliente: ");
@@ -151,28 +177,34 @@ public class Main {
 									clienteNovo.setIdade(idade);
 									
 									clientes.add(clienteNovo);
+									limpaTela(180);
+									System.out.println("> Cliente cadastrado com sucesso");
+									limpaTela(2);
 									
 								break;
 							}	
 							case "4":{
+								limpaTela(180);
 									System.out.println("============== Clientes Cadastrados ================");
 									for(int i = 0; i < clientes.size(); i++) {
 									Cliente clienteb = clientes.get(i);
 									System.out.println("| id : "+i);
 									System.out.println("| Nome do Cliente: "+clienteb.getNome());
 									System.out.println("| idade do Cliente : "+clienteb.getIdade());
-									
 									}
+									limpaTela(1);
+									System.out.println("> Acima a lista de clientes cadastrado no sistema");
+									limpaTela(2);
 								break;
 							}	
 							case "5":{
-								
+								limpaTela(180);
 								
 								break;
 							}
 							case "6":{
 								cadastros = false;
-								
+								limpaTela(50);
 								
 								break;
 							}
@@ -181,7 +213,7 @@ public class Main {
 					}
 				}
 				case "2":{
-					
+					limpaTela(180);
 					if(  opcao.equals("2") ) {
 						opcao1 = "2";
 						consultas  = true;
@@ -189,13 +221,15 @@ public class Main {
 						vendaIngressos = false;
 						cadastros = false;
 					}
+					
+					
 					while(consultas) {
 						System.out.println("============= Consultas =================");
 						System.out.println("| [1] Consultar filmes e seus horários  |");
 						System.out.println("| [2] Procurar filme por nome           |");
 						System.out.println("| [3] Consultar clientes                |");
 						System.out.println("| [4] Procurar cliente por nome         |");
-						System.out.println("| [ ] -------------------------         |");
+						System.out.println("| [5] Limpar a Tela                     |");
 						System.out.println("| [6] Voltar                            |");
 						System.out.println("=========================================");
 						System.out.print("Digite opção desejada:");
@@ -203,19 +237,30 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
-									System.out.println("============== Filmes Cadastrados ================");
-									for(int i = 0; i < bancoFilmes.size(); i++) {
-									Filmes filme = bancoFilmes.get(i);
-									System.out.println("| id : "+i);
-									System.out.println("| Nome do Filme: "+filme.getNome());
-									System.out.println("| Horário : "+filme.getHorario());
-									System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
-									System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
-									System.out.println("================================================");
-									}
+								limpaTela(180);
+								System.out.println("============== Filmes Cadastrados ================");
+								for(int i = 0; i < bancoFilmes.size(); i++) {
+								Filmes filme = bancoFilmes.get(i);
+								System.out.println("| id : "+i);
+								System.out.println("| Nome do Filme: "+filme.getNome());
+								System.out.println("| Horário : "+filme.getHorario());
+								System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
+								System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
+								System.out.println("================================================");
+								}
+								limpaTela(1);
+								
+							
+								System.out.println("> Acima a lista de filme cadastrado no sistema");
+								
+								limpaTela(2);
 								break;
 							}
 							case "2":{
+								limpaTela(15);
+								System.out.println("> Abaixo digite nome do filme a ser procurado");
+								
+								limpaTela(2);
 									System.out.println("============== Procurar Filme por Nome ================");
 									System.out.print("Digite o nome do filme: ");
 									String nome = teclado.nextLine();
@@ -223,7 +268,7 @@ public class Main {
 									for(int i = 0; i < bancoFilmes.size(); i++) {
 									Filmes filme = bancoFilmes.get(i);
 									if( nome.equals( filme.getNome())) {
-										
+										limpaTela(15);
 										System.out.println("========== Filme encontrado ====================");
 										System.out.println("| id : "+i);
 										System.out.println("| Nome do Filme: "+filme.getNome());
@@ -231,6 +276,7 @@ public class Main {
 										System.out.println("| Preço da entrada inteira R$: "+String.format("%.2f", filme.getPreco1()));
 										System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 										System.out.println("================================================");
+										limpaTela(2);
 										encontrou = true;
 										break;
 									}
@@ -238,25 +284,34 @@ public class Main {
 									
 									}
 									if(!encontrou){
+										limpaTela(15);
 										System.out.println("========== Filme não encontrado ================");
 										System.out.println("|");
 										System.out.println("|"); 
 										System.out.println("================================================");
+										limpaTela(2);
 									}
 								break;
 							}
 							case "3":{
-									System.out.println("============== Clientes Cadastrados ================");
-									for(int i = 0; i < clientes.size(); i++) {
-									Cliente clienteb = clientes.get(i);
-									System.out.println("| id : "+i);
-									System.out.println("| Nome do Cliente : "+clienteb.getNome());
-									System.out.println("| Idade do Cliente : "+clienteb.getIdade());
-									
-									}
+								limpaTela(180);
+								System.out.println("============== Clientes Cadastrados ================");
+								for(int i = 0; i < clientes.size(); i++) {
+								Cliente clienteb = clientes.get(i);
+								System.out.println("| id : "+i);
+								System.out.println("| Nome do Cliente: "+clienteb.getNome());
+								System.out.println("| idade do Cliente : "+clienteb.getIdade());
+								}
+								limpaTela(1);
+								System.out.println("> Acima a lista de clientes cadastrado no sistema");
+								limpaTela(2);
 								break;
 							}	
 							case "4":{
+								limpaTela(15);
+								System.out.println("> Abaixo digite nome do cliente a ser procurado");
+								
+								limpaTela(2);
 								System.out.println("============== Procurar Cliente por Nome ================");
 								System.out.print("Digite o nome do cliente: ");
 								String nome = teclado.nextLine();
@@ -264,12 +319,13 @@ public class Main {
 								for(int i = 0; i < clientes.size(); i++) {
 								Cliente clienteb = clientes.get(i);
 								if( nome.equals( clienteb.getNome())) {
-									
+									limpaTela(15);
 									System.out.println("========== Cliente encontrado ====================");
 									System.out.println("| id : "+i);
 									System.out.println("| Nome do Cliente: "+clienteb.getNome());
 									System.out.println("| Idade do Cliente : "+clienteb.getIdade());
 									System.out.println("===================================================");
+									limpaTela(2);
 									encontrou = true;
 									break;
 								}
@@ -277,19 +333,22 @@ public class Main {
 								
 								}
 								if(!encontrou){
+									limpaTela(15);
 									System.out.println("========== Cliente não encontrado ================");
 									System.out.println("|");
 									System.out.println("|"); 
 									System.out.println("==================================================");
+									limpaTela(2);
 								}
 								break;
 							}	
 							case "5":{
-								
+								limpaTela(180);
 								break;
 							}
 							case "6":{
 								consultas = false;
+								limpaTela(50);
 								break;
 							}
 					}
@@ -297,6 +356,7 @@ public class Main {
 					break;
 				}
 				case "3":{
+					limpaTela(180);
 					if(  opcao.equals("3") ) {
 						opcao1 = "3";
 						consultas  = false;
@@ -304,13 +364,15 @@ public class Main {
 						vendaIngressos = false;
 						atualizacoes = true;
 					}
+				
+					
 					while(atualizacoes) {
 						System.out.println("============= Atualizações ===============");
 						System.out.println("| [1] Atualizar Dados de um filme        |");
 						System.out.println("| [2] Remover um filme                   |");
 						System.out.println("| [3] Atualizar Dados de um cliente      |");
 						System.out.println("| [4] Remover um cliente                 |");
-						System.out.println("| [ ] ------------------------           |");
+						System.out.println("| [5] Limpar a Tela                      |");
 						System.out.println("| [6] Voltar                             |");
 						System.out.println("==========================================");
 						System.out.print("Digite opção desejada:");
@@ -318,6 +380,8 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
+								limpaTela(15);
+								
 								System.out.println("============== Atualizar Dados de um Filme ================");
 								for(int i = 0; i < bancoFilmes.size(); i++) {
 								Filmes filme = bancoFilmes.get(i);
@@ -325,6 +389,10 @@ public class Main {
 								System.out.println("| Nome do Filme: "+filme.getNome());
 								System.out.println("================================================");
 								}
+								limpaTela(1);
+								System.out.println("> Abaixo digite o id do filme a ser alterado");
+								
+								limpaTela(2);
 								System.out.print("Digite o id do filme para atualizar os dados: ");
 								int id = teclado.nextInt();
 								teclado.nextLine();
@@ -341,10 +409,15 @@ public class Main {
 								filme.setHorario(novohorario);
 								filme.setPreco1(Double.parseDouble(novopreco1));
 								filme.setPreco2(Double.parseDouble(novopreco2));
+								limpaTela(180);
+								System.out.println("> Filme alterado com sucesso");
+								limpaTela(2);
 							
 								break;
 							}
 							case "2":{
+								limpaTela(15);
+								
 									System.out.println("============== Remover um Filme ================");
 									for(int i = 0; i < bancoFilmes.size(); i++) {
 									Filmes filme = bancoFilmes.get(i);
@@ -352,15 +425,23 @@ public class Main {
 									System.out.println("| Nome do Filme: "+filme.getNome());
 									System.out.println("================================================");
 									}
+									limpaTela(1);
+									System.out.println("> Abaixo digite o id do filme a ser removido");
+									
+									limpaTela(2);
 									System.out.print("Digite o id do filme que deseja remover: ");
 									int id = teclado.nextInt();
 									teclado.nextLine();
 									
 									bancoFilmes.remove(id);
+									limpaTela(180);
+									System.out.println("> Filme Removido com sucesso");
+									limpaTela(2);
 							
 								break;
 							}
 							case "3":{
+								limpaTela(15);
 									System.out.println("============== Atualizar Dados de um Cliente ================");
 									for(int i = 0; i < clientes.size(); i++) {
 									Cliente clienteb = clientes.get(i);
@@ -368,6 +449,10 @@ public class Main {
 									System.out.println("| Nome do Cliente: "+clienteb.getNome());
 									System.out.println("================================================");
 									}
+									limpaTela(1);
+									System.out.println("> Abaixo digite o id do cliente a ser alterado");
+									
+									limpaTela(2);
 									System.out.print("Digite o id do cliente para atualizar os dados: ");
 									int id = teclado.nextInt();
 									teclado.nextLine();
@@ -378,12 +463,16 @@ public class Main {
 									Cliente clienteb = clientes.get(id);
 									clienteb.setNome(novonome);
 									clienteb.setIdade(novoidade);
+									limpaTela(180);
+									System.out.println("> Filme alterado com sucesso");
+									limpaTela(2);
 									
 								
 									
 								break;
 							}	
 							case "4":{
+								limpaTela(15);
 									System.out.println("============== Remover um Cliente ================");
 									for(int i = 0; i < clientes.size(); i++) {
 									Cliente clienteb = clientes.get(i);
@@ -391,24 +480,31 @@ public class Main {
 									System.out.println("| Nome do Cliente: "+clienteb.getNome());
 									System.out.println("===================================================");
 									}
+									limpaTela(1);
+									System.out.println("> Abaixo digite o id do cliente a ser removido");
+									
+									limpaTela(2);
 									System.out.print("Digite o id do cliente que deseja remover: ");
 									int id = teclado.nextInt();
 									teclado.nextLine();
 									
 									clientes.remove(id);
+									limpaTela(180);
+									System.out.println("> Filme Removido com sucesso");
+									limpaTela(2);
 						
 									
 									
 								break;
 							}	
 							case "5":{
-								
+								limpaTela(180);
 								
 								break;
 							}
 							case "6":{
 								atualizacoes = false;
-								
+								limpaTela(50);
 								
 								break;
 							}
@@ -417,6 +513,7 @@ public class Main {
 				}
 							
 				case "4":{
+					limpaTela(180);
 					if(  opcao.equals("4") ) {
 						opcao1 = "4";
 						consultas  = false;
@@ -424,13 +521,14 @@ public class Main {
 						vendaIngressos = true;
 						atualizacoes = false;
 					}
+					
 					while(vendaIngressos) {
 						System.out.println("============= Venda de Ingressos ===============");
 						System.out.println("| [1] Filmes,Horários e Preços                 |");
 						System.out.println("| [2] Clientes no Sistema                      |");
 						System.out.println("| [3] Vender Ingressos                         |");
 						System.out.println("| [4] ------------------------                 |");
-						System.out.println("| [ ] ------------------------                 |");
+						System.out.println("| [5] Limpar a Tela                            |");
 						System.out.println("| [6] Voltar                                   |");
 						System.out.println("================================================");
 						System.out.print("Digite opção desejada:");
@@ -438,6 +536,7 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
+								limpaTela(180);
 								System.out.println("============== Filmes Cadastrados ================");
 								for(int i = 0; i < bancoFilmes.size(); i++) {
 								Filmes filme = bancoFilmes.get(i);
@@ -448,21 +547,35 @@ public class Main {
 								System.out.println("| Preço da meia entrada  R$: "+String.format("%.2f", filme.getPreco2()));
 								System.out.println("================================================");
 								}
+								limpaTela(1);
+								
+							
+								System.out.println("> Acima a lista de filme cadastrado no sistema");
+								
+								limpaTela(2);
 							
 								break;
 							}
 							case "2":{
-									System.out.println("============== Clientes Cadastrados ================");
-									for(int i = 0; i < clientes.size(); i++) {
-									Cliente clienteb = clientes.get(i);
-									System.out.println("| id : "+i);
-									System.out.println("| Nome do Cliente : "+clienteb.getNome());
-									System.out.println("| Idade do Cliente : "+clienteb.getIdade());
-									
-									}
+								limpaTela(180);
+								System.out.println("============== Clientes Cadastrados ================");
+								for(int i = 0; i < clientes.size(); i++) {
+								Cliente clienteb = clientes.get(i);
+								System.out.println("| id : "+i);
+								System.out.println("| Nome do Cliente: "+clienteb.getNome());
+								System.out.println("| idade do Cliente : "+clienteb.getIdade());
+								}
+								limpaTela(1);
+								System.out.println("> Acima a lista de clientes cadastrado no sistema");
+								limpaTela(2);
 								break;
 							}
 							case "3":{
+								limpaTela(15);
+								System.out.println("> Abaixo digite id do cliente "
+										+ "e o id do filme");
+								
+								limpaTela(2);
 								System.out.println("============== Venda de Igressos ================");
 								System.out.println("Digite id do cliente");
 								int idcli = teclado.nextInt();
@@ -470,6 +583,7 @@ public class Main {
 								System.out.println("Digite id do filme");
 								int idfil = teclado.nextInt();
 								teclado.nextLine();
+								limpaTela(4);
 								System.out.println("================ dados da compra ====================");
 								Cliente clienteb = clientes.get(idcli);
 								Filmes filme = bancoFilmes.get(idfil);
@@ -491,7 +605,8 @@ public class Main {
 									System.out.println("============== continuando compra ===================");
 									System.out.println("| Total a Pagar: "+String.format("%.2f", filme.getPreco1()));
 								}
-								System.out.println("|Escolha a forma de padamento:");
+								
+								System.out.println("| Escolha a forma de padamento:");
 								System.out.println("| [1] Avista");
 								System.out.println("| [2] Cartão de crédito");
 								System.out.println("|");
@@ -499,6 +614,7 @@ public class Main {
 								String forPag = teclado.nextLine();
 								switch(forPag) {
 									case "1":{
+										limpaTela(4);
 										System.out.println("-----Você pagou avista-------------------------------------");
 										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
 											System.out.println("|");
@@ -510,6 +626,10 @@ public class Main {
 											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
+											limpaTela(2);
+											System.out.println("> Acima o comprovante de pagamento");
+											limpaTela(2);
+											
 										}else {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
@@ -520,10 +640,14 @@ public class Main {
 											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
+											limpaTela(2);
+											System.out.println("> Acima o comprovante de pagamento");
+											limpaTela(2);
 										}
 									break;
 									}
 									case "2":{
+										limpaTela(4);
 										System.out.println("-----Você pagou com cartão de crédito----------------------");
 										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
 											System.out.println("|");
@@ -535,6 +659,9 @@ public class Main {
 											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
+											limpaTela(2);
+											System.out.println("> Acima o comprovante de pagamento");
+											limpaTela(2);
 										}else {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
@@ -545,11 +672,16 @@ public class Main {
 											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
+											limpaTela(2);
+											System.out.println("> Acima o comprovante de pagamento");
+											limpaTela(2);
 										}
 										break;
 										}
 									default:{
+										limpaTela(15);
 										System.out.println("Opção de Pagamento invalida");
+										limpaTela(2);
 										break;
 										}
 								}
@@ -562,11 +694,12 @@ public class Main {
 							}	
 							case "5":{
 								
-								
+								limpaTela(180);
 								break;
 							}
 							case "6":{
 								vendaIngressos = false;
+								limpaTela(50);
 								
 								
 								break;
@@ -577,7 +710,7 @@ public class Main {
 			}
 					
 				case "5":{
-					
+					limpaTela(180);
 					break;
 				}
 				case "6":{
@@ -595,6 +728,30 @@ public class Main {
 			
 		
 
+	}
+	public static void limpaTela(int n1) {
+		final String os = System.getProperty("os.name");
+		if(os.contains("Linux")) {
+			try {
+				for(int i = 0; i < n1; i++) {
+				Runtime.getRuntime().exec("clear");
+				System.out.println(" ");
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else {
+			try {
+				for(int i = 0; i < n1; i++) {
+				Runtime.getRuntime().exec("cls");
+				System.out.println(" ");
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 }
