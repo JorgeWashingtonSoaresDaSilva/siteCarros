@@ -25,25 +25,34 @@ public class Main {
 		filme0.setNome("Resident Evil");
 		filme0.setHorario("15:30");
 		filme0.setPreco1(Double.parseDouble("33.34"));
-		filme0.setPreco2(Double.parseDouble("18.71"));
+		double preco = filme0.getPreco1();
+		double preco01 = (preco/2);
+		filme0.setPreco2(preco01);
+		
 		bancoFilmes.add(filme0);
 		Filmes filme1 = new Filmes();
 		filme1.setNome("Transformers");
 		filme1.setHorario("17:30");
 		filme1.setPreco1(Double.parseDouble("33.34"));
-		filme1.setPreco2(Double.parseDouble("18.71"));
+		double preco0 = filme1.getPreco1();
+		double preco3 = (preco0/2);
+		filme1.setPreco2(preco3);
 		bancoFilmes.add(filme1);
 		Filmes filme2 = new Filmes();
 		filme2.setNome("Piratas do Caribe");
 		filme2.setHorario("19:30");
 		filme2.setPreco1(Double.parseDouble("33.34"));
-		filme2.setPreco2(Double.parseDouble("18.71"));
+		double preco4 = filme2.getPreco1();
+		double preco5 = (preco4/2);
+		filme2.setPreco2(preco5);
 		bancoFilmes.add(filme2);
 		Filmes filme3 = new Filmes();
 		filme3.setNome("Duro de Matar 4.0");
 		filme3.setHorario("21:30");
 		filme3.setPreco1(Double.parseDouble("25.50"));
-		filme3.setPreco2(Double.parseDouble("12.75"));
+		double prec6 = filme0.getPreco1();
+		double preco7 = (prec6/2);
+		filme3.setPreco2(preco7);
 		bancoFilmes.add(filme3);
 		// Cadastro de clientes
 		Cliente cliente = new Cliente();
@@ -105,7 +114,7 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
-								limpaTela(15);
+								limpaTela(80);
 								System.out.println("> Abaixo preencha dados do filme a ser cadastrado no sistema");
 								
 								limpaTela(2);
@@ -118,8 +127,8 @@ public class Main {
 									String horario = teclado.nextLine();
 									System.out.print("Digite preço da entrada inteira R$: ");
 									String preco1 = teclado.nextLine().replaceAll(",", ".");;
-									System.out.print("Digite preço da entrada meia R$: ");
-									String preco2 = teclado.nextLine().replaceAll(",", ".");
+									
+									
 							
 									// criando nova instancia da classe Filmes
 									Filmes filme = new Filmes();
@@ -128,7 +137,9 @@ public class Main {
 									filme.setNome(nome);
 									filme.setHorario(horario);
 									filme.setPreco1(Double.parseDouble(preco1));
-									filme.setPreco2(Double.parseDouble(preco2));
+									double preco8 = filme.getPreco1();
+									double preco9 = (preco8/2);
+									filme.setPreco2(preco9);
 									
 									bancoFilmes.add(filme);
 									limpaTela(180);
@@ -158,7 +169,7 @@ public class Main {
 								break;
 							}
 							case "3":{
-								limpaTela(15);
+								limpaTela(80);
 								System.out.println("> Abaixo preencha dados do cliente a ser cadastrado no sistema");
 								
 								limpaTela(2);
@@ -257,7 +268,7 @@ public class Main {
 								break;
 							}
 							case "2":{
-								limpaTela(15);
+								limpaTela(180);
 								System.out.println("> Abaixo digite nome do filme a ser procurado");
 								
 								limpaTela(2);
@@ -268,7 +279,7 @@ public class Main {
 									for(int i = 0; i < bancoFilmes.size(); i++) {
 									Filmes filme = bancoFilmes.get(i);
 									if( nome.equals( filme.getNome())) {
-										limpaTela(15);
+										limpaTela(22);
 										System.out.println("========== Filme encontrado ====================");
 										System.out.println("| id : "+i);
 										System.out.println("| Nome do Filme: "+filme.getNome());
@@ -284,7 +295,7 @@ public class Main {
 									
 									}
 									if(!encontrou){
-										limpaTela(15);
+										limpaTela(26);
 										System.out.println("========== Filme não encontrado ================");
 										System.out.println("|");
 										System.out.println("|"); 
@@ -308,7 +319,7 @@ public class Main {
 								break;
 							}	
 							case "4":{
-								limpaTela(15);
+								limpaTela(180);
 								System.out.println("> Abaixo digite nome do cliente a ser procurado");
 								
 								limpaTela(2);
@@ -319,7 +330,7 @@ public class Main {
 								for(int i = 0; i < clientes.size(); i++) {
 								Cliente clienteb = clientes.get(i);
 								if( nome.equals( clienteb.getNome())) {
-									limpaTela(15);
+									limpaTela(26);
 									System.out.println("========== Cliente encontrado ====================");
 									System.out.println("| id : "+i);
 									System.out.println("| Nome do Cliente: "+clienteb.getNome());
@@ -333,7 +344,7 @@ public class Main {
 								
 								}
 								if(!encontrou){
-									limpaTela(15);
+									limpaTela(26);
 									System.out.println("========== Cliente não encontrado ================");
 									System.out.println("|");
 									System.out.println("|"); 
@@ -571,11 +582,11 @@ public class Main {
 								break;
 							}
 							case "3":{
-								limpaTela(15);
+								limpaTela(35);
 								System.out.println("> Abaixo digite id do cliente "
 										+ "e o id do filme");
 								
-								limpaTela(2);
+								limpaTela(4);
 								System.out.println("============== Venda de Igressos ================");
 								System.out.println("Digite id do cliente");
 								int idcli = teclado.nextInt();
@@ -583,7 +594,7 @@ public class Main {
 								System.out.println("Digite id do filme");
 								int idfil = teclado.nextInt();
 								teclado.nextLine();
-								limpaTela(4);
+								limpaTela(35);
 								System.out.println("================ dados da compra ====================");
 								Cliente clienteb = clientes.get(idcli);
 								Filmes filme = bancoFilmes.get(idfil);
@@ -614,7 +625,7 @@ public class Main {
 								String forPag = teclado.nextLine();
 								switch(forPag) {
 									case "1":{
-										limpaTela(4);
+										limpaTela(16);
 										System.out.println("-----Você pagou avista-------------------------------------");
 										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
 											System.out.println("|");
@@ -647,7 +658,7 @@ public class Main {
 									break;
 									}
 									case "2":{
-										limpaTela(4);
+										limpaTela(16);
 										System.out.println("-----Você pagou com cartão de crédito----------------------");
 										if(Integer.parseInt(clienteb.getIdade()) < 18 || Integer.parseInt(clienteb.getIdade()) >=65) {
 											System.out.println("|");
