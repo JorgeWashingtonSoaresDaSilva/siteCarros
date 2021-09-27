@@ -608,13 +608,13 @@ public class Main {
 									System.out.println("|");
 									System.out.println("| Você paga Meia Entrada");
 									System.out.println("============== continuando compra ==================");
-									System.out.println("| Total a Pagar: "+String.format("%.2f", filme.getPreco2()));
+									System.out.println("| Total a Pagar: R$"+String.format("%.2f", filme.getPreco2()));
 									
 								}else {
 									System.out.println("|");
 									System.out.println("| Você paga Entrada Inteira");
 									System.out.println("============== continuando compra ===================");
-									System.out.println("| Total a Pagar: "+String.format("%.2f", filme.getPreco1()));
+									System.out.println("| Total Pago: R$"+String.format("%.2f", filme.getPreco1()));
 								}
 								
 								System.out.println("| Escolha a forma de padamento:");
@@ -631,10 +631,10 @@ public class Main {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
 											System.out.println("| Horário da sessão: "+filme.getHorario());
-											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
-											System.out.println("| Desconto: R$ "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("| Preço do ingresso: R$"+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$"+String.format("%.2f", filme.getPreco2()));
 											System.out.println("|");
-											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("| Total Pago: R$"+String.format("%.2f", filme.getPreco2()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
 											limpaTela(2);
@@ -645,10 +645,10 @@ public class Main {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
 											System.out.println("| Horário da sessão: "+filme.getHorario());
-											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
-											System.out.println("| Desconto: R$ 00.00");
+											System.out.println("| Preço do ingresso: R$"+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$00.00");
 											System.out.println("|");
-											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Total Pago: R$"+String.format("%.2f", filme.getPreco1()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
 											limpaTela(2);
@@ -664,10 +664,10 @@ public class Main {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
 											System.out.println("| Horário da sessão: "+filme.getHorario());
-											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
-											System.out.println("| Desconto: R$ "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("| Preço do ingresso: R$"+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$"+String.format("%.2f", filme.getPreco2()));
 											System.out.println("|");
-											System.out.println("| Total Pago: "+String.format("%.2f", filme.getPreco2()));
+											System.out.println("| Total Pago: R$"+String.format("%.2f", filme.getPreco2()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
 											limpaTela(2);
@@ -677,10 +677,10 @@ public class Main {
 											System.out.println("|");
 											System.out.println("| Ingresso do filme: "+filme.getNome());
 											System.out.println("| Horário da sessão: "+filme.getHorario());
-											System.out.println("| Preço do ingresso: R$ "+String.format("%.2f", filme.getPreco1()));
-											System.out.println("| Desconto: R$ 00.00");
+											System.out.println("| Preço do ingresso: R$"+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Desconto: R$00.00");
 											System.out.println("|");
-											System.out.println("| Total Pago: R$ "+String.format("%.2f", filme.getPreco1()));
+											System.out.println("| Total Pago: R$"+String.format("%.2f", filme.getPreco1()));
 											System.out.println("| Bom Filme");
 											System.out.println("|---------------------------------------------------------");
 											limpaTela(2);
