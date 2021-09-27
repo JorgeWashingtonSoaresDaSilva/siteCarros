@@ -50,7 +50,7 @@ public class Main {
 		filme3.setNome("Duro de Matar 4.0");
 		filme3.setHorario("21:30");
 		filme3.setPreco1(Double.parseDouble("25.50"));
-		double prec6 = filme0.getPreco1();
+		double prec6 = filme3.getPreco1();
 		double preco7 = (prec6/2);
 		filme3.setPreco2(preco7);
 		bancoFilmes.add(filme3);
@@ -726,6 +726,14 @@ public class Main {
 				}
 				case "6":{
 					rodando = false;
+					limpaTela(50);
+					System.out.print("Saindo do Sistema em: ");
+					
+					for(int i = 10; i >= 0; i--) {
+						System.out.print(" "+i);
+					}
+					limpaTela(2);
+					System.out.println("Saiu com sucesso do sistema");
 					break;
 				}
 		}
