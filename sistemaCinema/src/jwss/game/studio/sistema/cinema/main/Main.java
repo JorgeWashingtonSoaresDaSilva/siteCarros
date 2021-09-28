@@ -475,7 +475,7 @@ public class Main {
 									clienteb.setNome(novonome);
 									clienteb.setIdade(novoidade);
 									limpaTela(180);
-									System.out.println("> Filme alterado com sucesso");
+									System.out.println("> Cliente alterado com sucesso");
 									limpaTela(2);
 									
 								
@@ -501,7 +501,7 @@ public class Main {
 									
 									clientes.remove(id);
 									limpaTela(180);
-									System.out.println("> Filme Removido com sucesso");
+									System.out.println("> Cliente Removido com sucesso");
 									limpaTela(2);
 						
 									
