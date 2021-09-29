@@ -472,7 +472,7 @@ public class Main {
 									teclado.nextLine();
 									System.out.print("Digite novo nome do cliente: ");
 									String novonome = teclado.nextLine();
-									System.out.print("Digite nova data de nascimento: ");
+									System.out.print("Digite nova ano de nascimento: ");
 									String novoidade = teclado.nextLine();
 									Cliente clienteb = clientes.get(id);
 									clienteb.setNome(novonome);
