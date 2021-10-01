@@ -753,27 +753,10 @@ public class Main {
 	}
 	public static void limpaTela(int n1) {
 		final String os = System.getProperty("os.name");
-		if(os.contains("Linux")) {
-			try {
-				for(int i = 0; i < n1; i++) {
-				Runtime.getRuntime().exec("clear");
-				System.out.println(" ");
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		for(int i = 0; i < n1; i++) {
+			System.out.println(" ");
 			}
-		}else {
-			try {
-				for(int i = 0; i < n1; i++) {
-				Runtime.getRuntime().exec("cls");
-				System.out.println(" ");
-				}
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+		
 	}
 
 }
