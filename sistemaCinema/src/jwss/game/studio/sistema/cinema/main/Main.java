@@ -752,7 +752,7 @@ public class Main {
 
 	}
 	public static void limpaTela(int n1) {
-		final String os = System.getProperty("os.name");
+		
 		for(int i = 0; i < n1; i++) {
 			System.out.println(" ");
 			}
