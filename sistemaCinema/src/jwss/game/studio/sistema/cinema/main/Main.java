@@ -1,6 +1,5 @@
 package jwss.game.studio.sistema.cinema.main;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
