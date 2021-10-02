@@ -89,7 +89,7 @@ public class Main {
 			
 			
 				case "1":{
-					limpaTela(180);
+					limpaTela(80);
 					if(  opcao.equals("1") ) {
 						opcao1 = "1";
 						consultas  = false;
@@ -148,7 +148,7 @@ public class Main {
 								break;
 							}
 							case "2":{
-								limpaTela(180);
+								limpaTela(80);
 									System.out.println("============== Filmes Cadastrados ================");
 									for(int i = 0; i < bancoFilmes.size(); i++) {
 									Filmes filme = bancoFilmes.get(i);
@@ -187,14 +187,14 @@ public class Main {
 									clienteNovo.setIdade(idade);
 									
 									clientes.add(clienteNovo);
-									limpaTela(180);
+									limpaTela(80);
 									System.out.println("> Cliente cadastrado com sucesso");
 									limpaTela(2);
 									
 								break;
 							}	
 							case "4":{
-								limpaTela(180);
+								limpaTela(80);
 									System.out.println("============== Clientes Cadastrados ================");
 									for(int i = 0; i < clientes.size(); i++) {
 									Cliente clienteb = clientes.get(i);
@@ -223,7 +223,7 @@ public class Main {
 					}
 				}
 				case "2":{
-					limpaTela(180);
+					limpaTela(80);
 					if(  opcao.equals("2") ) {
 						opcao1 = "2";
 						consultas  = true;
@@ -247,7 +247,7 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("============== Filmes Cadastrados ================");
 								for(int i = 0; i < bancoFilmes.size(); i++) {
 								Filmes filme = bancoFilmes.get(i);
@@ -267,7 +267,7 @@ public class Main {
 								break;
 							}
 							case "2":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("> Abaixo digite nome do filme a ser procurado");
 								
 								limpaTela(2);
@@ -304,7 +304,7 @@ public class Main {
 								break;
 							}
 							case "3":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("============== Clientes Cadastrados ================");
 								for(int i = 0; i < clientes.size(); i++) {
 								Cliente clienteb = clientes.get(i);
@@ -318,7 +318,7 @@ public class Main {
 								break;
 							}	
 							case "4":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("> Abaixo digite nome do cliente a ser procurado");
 								
 								limpaTela(2);
@@ -366,7 +366,7 @@ public class Main {
 					break;
 				}
 				case "3":{
-					limpaTela(180);
+					limpaTela(80);
 					if(  opcao.equals("3") ) {
 						opcao1 = "3";
 						consultas  = false;
@@ -447,7 +447,7 @@ public class Main {
 									teclado.nextLine();
 									
 									bancoFilmes.remove(id);
-									limpaTela(180);
+									limpaTela(80);
 									System.out.println("> Filme Removido com sucesso");
 									limpaTela(2);
 							
@@ -526,7 +526,7 @@ public class Main {
 				}
 							
 				case "4":{
-					limpaTela(180);
+					limpaTela(80);
 					if(  opcao.equals("4") ) {
 						opcao1 = "4";
 						consultas  = false;
@@ -549,7 +549,7 @@ public class Main {
 						
 						switch (opcao1) {
 							case "1":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("============== Filmes Cadastrados ================");
 								for(int i = 0; i < bancoFilmes.size(); i++) {
 								Filmes filme = bancoFilmes.get(i);
@@ -570,7 +570,7 @@ public class Main {
 								break;
 							}
 							case "2":{
-								limpaTela(180);
+								limpaTela(80);
 								System.out.println("============== Clientes Cadastrados ================");
 								for(int i = 0; i < clientes.size(); i++) {
 								Cliente clienteb = clientes.get(i);
