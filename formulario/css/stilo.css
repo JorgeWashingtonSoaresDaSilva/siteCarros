@@ -9,8 +9,9 @@ body{
 }
 form.form1{
 	width: 600px;
-	height: 490px;
+	height: 504px;
 	text-align: center;
+
 	margin: 14px 320px;
 	background-color: #787A91;
 	color: white;
@@ -19,11 +20,15 @@ form.form1{
 
 	padding-left: 10px;
 }
+	
 
 form > textarea{
 width: 264px;
 height: 100px;
 margin: -15px 78px;
+}
+label.textarea{
+	text-align: left;
 }
 
 div.formu > h1{
