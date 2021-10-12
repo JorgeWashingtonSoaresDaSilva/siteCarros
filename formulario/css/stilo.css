@@ -3,19 +3,20 @@ body{
 	font-family: 'Roboto', sans-serif;
 	margin: 0px;
 	padding: 0px;
-	text-align: center;
+	
 	background-color: #141E61;
 	color: white;
 }
-form{
+form.form1{
 	width: 600px;
 	height: 490px;
-	text-align: left;
-	margin: 14px 400px;
+	text-align: center;
+	margin: 14px 320px;
 	background-color: #787A91;
 	color: white;
 	border: solid;
 	border-color: #EEEEEE;
+
 	padding-left: 10px;
 }
 
@@ -24,15 +25,16 @@ width: 264px;
 height: 100px;
 margin: -15px 78px;
 }
-form > h1{
-	text-align: center;
-}
+
 div.formu > h1{
 	text-align: center;
 	background-color: #0F044C;
-	width: 100%;
+	width: 99,99%;
 	height: 80px;
 	padding-top: 20px;
+	border: solid;
+	border-width: 4px;
+	border-color: #EEEEEE;
 	
 }
 input.botton {
@@ -42,9 +44,11 @@ input.botton {
 	margin-left: 42%;
 	color: white;
 	background-color: #141E61;
-	border-color: #0F044C;
+	border-color: #3F0071;
+	border-radius: 6px;
 	
 }
 div.formu{
+	
 	margin: -20px 0px;
 }
