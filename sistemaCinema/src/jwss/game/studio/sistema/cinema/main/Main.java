@@ -218,6 +218,12 @@ public class Main {
 								
 								break;
 							}
+							default :{
+								limpaTela(50);
+								System.out.println("Opção invalida");
+								limpaTela(2);
+								break;
+							}
 							
 						}
 					}
@@ -359,6 +365,12 @@ public class Main {
 							case "6":{
 								consultas = false;
 								limpaTela(50);
+								break;
+							}
+							default :{
+								limpaTela(50);
+								System.out.println("Opção invalida");
+								limpaTela(2);
 								break;
 							}
 					}
@@ -519,6 +531,12 @@ public class Main {
 								atualizacoes = false;
 								limpaTela(50);
 								
+								break;
+							}
+							default :{
+								limpaTela(50);
+								System.out.println("Opção invalida");
+								limpaTela(2);
 								break;
 							}
 						}
@@ -713,8 +731,12 @@ public class Main {
 							case "6":{
 								vendaIngressos = false;
 								limpaTela(50);
-								
-								
+								break;
+							}
+							default :{
+								limpaTela(50);
+								System.out.println("Opção invalida");
+								limpaTela(2);
 								break;
 							}
 					
@@ -736,6 +758,12 @@ public class Main {
 					}
 					limpaTela(2);
 					System.out.println("Saiu com sucesso do sistema");
+					break;
+				}
+				default :{
+					limpaTela(50);
+					System.out.println("Opção invalida");
+					limpaTela(2);
 					break;
 				}
 		}
