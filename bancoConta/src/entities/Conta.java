@@ -7,14 +7,12 @@ public class Conta {
 	
 	
 	
-	public Conta(int numero, String nome, double saldo) {
-		super();
+	public Conta(int numero, String nome, double depositoInicial) {
 		this.numero = numero;
 		this.nome = nome;
-		this.saldo = saldo;
+		deposito(depositoInicial);
 	}
 	public Conta(int numero, String nome) {
-		super();
 		this.numero = numero;
 		this.nome = nome;
 		
@@ -22,9 +20,7 @@ public class Conta {
 	public int getNumero() {
 		return numero;
 	}
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
+	
 	public String getNome() {
 		return nome;
 	}
@@ -34,13 +30,19 @@ public class Conta {
 	public double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(double saldo) {
-		this.saldo = saldo;
-	}
+	
 	public void deposito(double quantia) {
-		
+		saldo += quantia;
 	}
 	public void saque(double quantia) {
-		
+		saldo -= quantia + 5;
+	}
+	public String toString() {
+		return "| Conta: "
+				+numero
+				+", Titular: "
+				+nome
+				+", Saldo: R$ "
+				+String.format("%.2f", saldo)+"                   ";
 	}
 }
