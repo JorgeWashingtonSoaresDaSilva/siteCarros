@@ -76,7 +76,9 @@ public class Program {
 				break;
 			}
 			default : {
-				
+					limpaTela(2);
+					System.out.println("Opção invalida");
+					limpaTela(2);
 				break;
 			
 			}
