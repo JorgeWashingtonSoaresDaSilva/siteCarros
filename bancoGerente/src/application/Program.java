@@ -15,9 +15,17 @@ public class Program {
 		ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 		Funcionario funcionario ;
 		String opcao = "";
+		int autoIdGerador = -1;
 		
 		boolean rodando = true;
 		while(rodando) {
+			if(autoIdGerador < 0) {
+				autoIdGerador = 0;
+			}else {
+				autoIdGerador++;
+			}
+			
+			
 			System.out.println("========= Sistema Gerente Banco 1.0 ===========");
 			System.out.println("| [1] Cadastros                               |");
 			System.out.println("| [2] Consultas                               |");
@@ -31,15 +39,17 @@ public class Program {
 		
 			switch (opcao) {
 			case "1":{
-				System.out.print("Digite id do Funcionario: ");
-				int id = sc.nextInt();
-				sc.nextLine();
+				limpaTela(2);
+				//System.out.print("Digite id do Funcionario: ");
+				int id = autoIdGerador; //sc.nextInt();
+				//sc.nextLine();
 				System.out.print("Digite nome do Funcionario: ");
 				String nome = sc.nextLine();
 				System.out.print("Digite cargo do Funcionario: ");
 				String cargo = sc.nextLine();
 				System.out.print("Digite salario bruto do Funcionario: ");
 				double salarioBruto = sc.nextDouble();
+				limpaTela(15);
 				sc.nextLine();
 				funcionario = new Funcionario(id, nome, salarioBruto, cargo);
 				
@@ -53,6 +63,7 @@ public class Program {
 					System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 					System.out.println("================================================");
 					}
+				limpaTela(4);
 				
 				break;
 			}
@@ -72,10 +83,19 @@ public class Program {
 		}
 		
 		
+		
 
 	}
 		sc.close();
 	}
+	public static void limpaTela(int n1) {
+		
+		for(int i = 0; i < n1; i++) {
+			System.out.println(" ");
+			}
+		
+	}
+
 	
 	
 }
