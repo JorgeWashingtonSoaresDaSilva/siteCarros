@@ -43,5 +43,11 @@ public class Funcionario {
 		this.cargo = cargo;
 	}
 	// Metodos de regra de negocio
-	
+	public static void limpaTela(int n1) {
+		
+		for(int i = 0; i < n1; i++) {
+			System.out.println(" ");
+			}
+		
+	}
 }

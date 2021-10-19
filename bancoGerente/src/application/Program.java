@@ -39,7 +39,7 @@ public class Program {
 		
 			switch (opcao) {
 			case "1":{
-				limpaTela(2);
+				Funcionario.limpaTela(2);
 				//System.out.print("Digite id do Funcionario: ");
 				int id = autoIdGerador; //sc.nextInt();
 				//sc.nextLine();
@@ -49,7 +49,7 @@ public class Program {
 				String cargo = sc.nextLine();
 				System.out.print("Digite salario bruto do Funcionario: ");
 				double salarioBruto = sc.nextDouble();
-				limpaTela(15);
+				Funcionario.limpaTela(15);
 				sc.nextLine();
 				funcionario = new Funcionario(id, nome, salarioBruto, cargo);
 				
@@ -63,7 +63,7 @@ public class Program {
 					System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 					System.out.println("================================================");
 					}
-				limpaTela(4);
+				Funcionario.limpaTela(4);
 				
 				break;
 			}
@@ -76,9 +76,9 @@ public class Program {
 				break;
 			}
 			default : {
-					limpaTela(2);
+					Funcionario.limpaTela(2);
 					System.out.println("Opção invalida");
-					limpaTela(2);
+					Funcionario.limpaTela(2);
 				break;
 			
 			}
@@ -90,13 +90,7 @@ public class Program {
 	}
 		sc.close();
 	}
-	public static void limpaTela(int n1) {
-		
-		for(int i = 0; i < n1; i++) {
-			System.out.println(" ");
-			}
-		
-	}
+	
 
 	
 	
