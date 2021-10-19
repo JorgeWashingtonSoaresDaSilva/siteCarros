@@ -8,7 +8,7 @@ body{
 	color: white;
 }
 form.form1{
-	width: 600px;
+	width: 680px;
 	height: 504px;
 	text-align: center;
 
@@ -44,7 +44,6 @@ input.botton {
 	width: 90px;
 	height: 40px;
 	margin-top: 18px;
-	margin-left: 42%;
 	color: white;
 	background-color: #141E61;
 	border-color: #3F0071;
