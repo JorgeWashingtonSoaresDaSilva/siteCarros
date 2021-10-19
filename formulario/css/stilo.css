@@ -12,7 +12,7 @@ form.form1{
 	height: 504px;
 	text-align: center;
 
-	margin: 14px 320px;
+	margin: 7px 298px;
 	background-color: #787A91;
 	color: white;
 	border: solid;
@@ -34,9 +34,9 @@ div.formu > h1{
 	background-color: #0F044C;
 	width: 99,99%;
 	height: 80px;
-	padding-top: 20px;
+	padding-top: 18px;
 	border: solid;
-	border-width: 4px;
+	
 	border-color: #EEEEEE;
 	
 }
@@ -51,6 +51,6 @@ input.botton {
 	
 }
 div.formu{
-	
+	text-align: center;
 	margin: -20px 0px;
 }
