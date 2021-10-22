@@ -3,12 +3,13 @@ package jwss.game.studio.sistema.cinema.main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Exeception.TratamentoExeception;
 import jwss.game.studio.sistema.cinema.banco.Filmes;
 import jwss.game.studio.sistema.cinema.entidade.Cliente;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
 		// capitura de dados pelo teclado
 		
 		
@@ -18,7 +19,7 @@ public class Main {
 		Scanner teclado = new Scanner(System.in);
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ArrayList<Filmes> bancoFilmes = new ArrayList<Filmes>();
-		
+		TratamentoExeception exeception = new TratamentoExeception();
 		// Cadastro de filmes
 		Filmes filme0 = new Filmes();
 		filme0.setNome("Resident Evil");
@@ -121,12 +122,35 @@ public class Main {
 									
 									System.out.print("Digite nome do filme: ");
 									String nome = teclado.nextLine();
+									while(nome == "") {
+										//exeception.Exeception("Digite um nome para filme, não pode cadastrar filme com nome vazio");
+										
+											limpaTela(1);
+											exeception.Exeception("Digite um nome para filme, "
+													+ "não pode cadastrar filme com nome vazio");
+											limpaTela(1);
+											System.out.print("Digite nome do filme: ");
+											nome = teclado.nextLine();
+										}
+									
 									System.out.print("Digite horário: ");
-									
 									String horario = teclado.nextLine();
-									System.out.print("Digite preço da entrada inteira R$: ");
-									String preco1 = teclado.nextLine().replaceAll(",", ".");;
+									while(horario == "") {
+										exeception.Exeception("Digite um horario para filme, "
+												+ "não pode cadastrar filme com horario vazio");
+										System.out.print("Digite horário: ");
+										 horario = teclado.nextLine();
+									}
 									
+									System.out.print("Digite preço da entrada inteira R$: ");
+									String preco1 = teclado.nextLine().replaceAll(",", ".");
+									while(preco1 == "") {
+										exeception.Exeception("Digite um preço para filme, não pode "
+												+ "cadastrar filme com preço vazio");
+										System.out.print("Digite preço da entrada inteira R$: ");
+										 preco1 = teclado.nextLine().replaceAll(",", ".");
+									}
+									if(nome != "" && horario != "" && preco1 != "") {
 									
 							
 									// criando nova instancia da classe Filmes
@@ -144,6 +168,7 @@ public class Main {
 									limpaTela(180);
 									System.out.println("> Filme cadastrado com sucesso");
 									limpaTela(2);
+									}
 								
 								break;
 							}

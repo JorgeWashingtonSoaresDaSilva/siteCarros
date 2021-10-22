@@ -1,5 +1,7 @@
 package jwss.game.studio.sistema.cinema.banco;
 
+import Exeception.TratamentoExeception;
+
 public class Filmes {
 	
 	private String nome;
