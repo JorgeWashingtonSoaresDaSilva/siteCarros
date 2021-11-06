@@ -4,18 +4,19 @@ public class Funcionario {
 	// Atributos
 	private String nome;
 	private double salarioBruto;
-	private String cargo;
+	private String email;
 	private int id;
+	
 	
 	
 	public Funcionario() {
 		
 	}
-	public Funcionario(int id,String nome, double salarioBruto, String cargo) {
+	public Funcionario(int id,String nome, double salarioBruto, String email) {
 		this.id = id;
 		this.nome = nome;
 		this.salarioBruto = salarioBruto;
-		this.cargo = cargo;
+		this.email = email;
 	}
 	// Métodos Geters e Seters
 	
@@ -36,13 +37,14 @@ public class Funcionario {
 		return salarioBruto;
 	}
 	
-	public String getCargo() {
-		return cargo;
+	public String getEmail() {
+		return email;
 	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	// Metodos de regra de negocio
+	
 	public static void limpaTela(int n1) {
 		
 		for(int i = 0; i < n1; i++) {
