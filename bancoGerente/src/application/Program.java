@@ -79,6 +79,11 @@ public class Program {
 							
 						
 					}else {
+						if(funcionarios.isEmpty()) {
+							System.out.println(" não existe funcionarios cadastrados para excluir!!");
+							System.out.println("escolha opçao 1 para cadastrar funcionario");
+							
+							
 							System.out.println("=================== Funcionaios ativos  ===============================");
 						for(int i = 0; i < funcionarios.size(); i++) {
 							Funcionario funcio = funcionarios.get(i);
@@ -91,7 +96,7 @@ public class Program {
 							}
 							Funcionario.limpaTela(4);
 							
-						
+						}
 						System.out.println("========= Sistema Gerente Banco 1.0 ===========");
 						System.out.println("| [1] Cadastrar Novo Funcionario              |");
 						System.out.println("| [2] Consulta Funcionarios Ativo             |");
@@ -137,7 +142,12 @@ public class Program {
 							break;
 						}
 						case "2":{
-							System.out.println("=================== Funcionaios ativos  ===============================");
+							if(funcionarios.isEmpty()) {
+								System.out.println(" não existe funcionarios cadastrados para excluir!!");
+								System.out.println("escolha opçao 1 para cadastrar funcionario");
+								
+								
+								System.out.println("=================== Funcionaios ativos  ===============================");
 							for(int i = 0; i < funcionarios.size(); i++) {
 								Funcionario funcio = funcionarios.get(i);
 								//System.out.println("=================== Funcionaios ativos  ==============================");
@@ -148,6 +158,8 @@ public class Program {
 								System.out.println("-----------------------------------------------------------------------");
 								}
 								Funcionario.limpaTela(4);
+								
+							}
 								break;
 						}
 						case "3":{
@@ -175,6 +187,25 @@ public class Program {
 			}
 					
 			case "2":{
+				
+				if(funcionarios.isEmpty()) {
+					System.out.println(" não existe funcionarios cadastrados para excluir!!");
+					System.out.println("escolha opçao 1 para cadastrar funcionario");
+					
+					
+				}else {
+					System.out.println("=================== Funcionaios ativos  ===============================");
+					for(int i = 0; i < funcionarios.size(); i++) {
+						Funcionario funcio = funcionarios.get(i);
+						//System.out.println("=================== Funcionaios ativos  ==============================");
+						System.out.println("| id : "+funcio.getId());
+						System.out.println("| Nome do Funcioário : "+funcio.getNome());
+						System.out.println("| Cargo : "+funcio.getEmail());
+						System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
+						System.out.println("-----------------------------------------------------------------------");
+						}
+						Funcionario.limpaTela(4);
+				}
 				
 				break;
 			}
