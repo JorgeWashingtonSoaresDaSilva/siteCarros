@@ -5,15 +5,15 @@ public class Funcionario {
 	private String nome;
 	private double salarioBruto;
 	private String email;
-	private int id;
+	
 	
 	
 	
 	public Funcionario() {
 		
 	}
-	public Funcionario(int id,String nome, double salarioBruto, String email) {
-		this.id = id;
+	public Funcionario(String nome, double salarioBruto, String email) {
+		
 		this.nome = nome;
 		this.salarioBruto = salarioBruto;
 		this.email = email;
@@ -23,12 +23,7 @@ public class Funcionario {
 	public String getNome() {
 		return nome;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	public void setNome(String nome) {
 		this.nome = nome;
