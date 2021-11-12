@@ -3,7 +3,6 @@ package application;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.Funcionario;
 
 
@@ -46,13 +45,30 @@ public class Program {
 							
 							System.out.print("Digite nome do funcionario: ");
 							String nome = sc.nextLine();
+							while(nome.isEmpty()) {
+								System.out.println("nome do funcionario não pode ser vazio ");
+								System.out.print("Digite nome do funcionario: ");
+								nome = sc.nextLine();
+							}
 							System.out.print("Digite email do funcionario: ");
 							String email = sc.nextLine();
+							while(email.isEmpty()) {
+								System.out.println("email do funcionario não pode ser vazio ");
+								System.out.print("Digite email do funcionario: ");
+								email = sc.nextLine();
+							}
 							System.out.print("Digite salario bruto do funcionario: ");
-							double salarioBruto = sc.nextDouble();
+							String salarioBruto = sc.nextLine();
+							
+							while(salarioBruto.isEmpty()) {
+								System.out.println("salario bruto do funcionario não pode ser vazio ");
+								System.out.print("Digite salario bruto do funcionario: ");
+								salarioBruto = sc.nextLine();
+							
+							}
 							Funcionario.limpaTela(15);
-							sc.nextLine();
-							funcionario = new Funcionario( nome, salarioBruto, email);
+							
+							funcionario = new Funcionario( nome, Double.valueOf(salarioBruto), email);
 								System.out.println("=======================================================================");
 							funcionarios.add(funcionario);
 							for(int i = 0; i < funcionarios.size(); i++) {
