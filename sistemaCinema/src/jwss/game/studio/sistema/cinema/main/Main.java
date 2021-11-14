@@ -16,6 +16,7 @@ public class Main {
 		
 		boolean consultas =true , cadastros = true, atualizacoes = true, vendaIngressos = true;
 		String opcao1 = "0", opcao = "0";
+		String h, m;
 		Scanner teclado = new Scanner(System.in);
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		ArrayList<Filmes> bancoFilmes = new ArrayList<Filmes>();
@@ -132,18 +133,25 @@ public class Main {
 											System.out.print("Digite nome do filme: ");
 											nome = teclado.nextLine();
 										}
+									String horario;
+									System.out.print("Digite hora: ");
+									  h = teclado.nextLine();
+									System.out.print("Digite minutos: ");
+									  m = teclado.nextLine();
+									  horario = h+":"+m;
 									
-									System.out.print("Digite horário: ");
-									String horario = teclado.nextLine();
-									while(horario == "") {
+									while(h == ""|| m == "") {
 										exeception.Exeception("Digite um horario para filme, "
 												+ "não pode cadastrar filme com horario vazio");
-										System.out.print("Digite horário: ");
-										 horario = teclado.nextLine();
+										System.out.print("Digite hora: ");
+										  h = teclado.nextLine();
+										System.out.print("Digite minutos: ");
+										  m = teclado.nextLine();
+										  horario = h+":"+m;
 									}
 									
 									System.out.print("Digite preço da entrada inteira R$: ");
-									String preco1 = teclado.nextLine().replaceAll(",", ".");
+									String preco1 = teclado.nextLine();
 									while(preco1 == "") {
 										exeception.Exeception("Digite um preço para filme, não pode "
 												+ "cadastrar filme com preço vazio");
