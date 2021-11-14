@@ -106,19 +106,32 @@ public class Program {
 							//System.out.println("Cadastrar");
 							Funcionario.limpaTela(2);
 							System.out.println("=================== Cadastros de Funcionario ================================");
-							//System.out.print("Digite id do Funcionario: ");
-							
-							//sc.nextLine();
 							System.out.print("Digite nome do funcionario: ");
 							String nome = sc.nextLine();
+							while(nome.isEmpty()) {
+								System.out.println("nome do funcionario não pode ser vazio ");
+								System.out.print("Digite nome do funcionario: ");
+								nome = sc.nextLine();
+							}
 							System.out.print("Digite email do funcionario: ");
 							String email = sc.nextLine();
+							while(email.isEmpty()) {
+								System.out.println("email do funcionario não pode ser vazio ");
+								System.out.print("Digite email do funcionario: ");
+								email = sc.nextLine();
+							}
 							System.out.print("Digite salario bruto do funcionario: ");
-							double salarioBruto = sc.nextDouble();
-							Funcionario.limpaTela(15);
-							sc.nextLine();
-							funcionario = new Funcionario(nome, salarioBruto, email);
+							String salarioBruto = sc.nextLine();
 							
+							while(salarioBruto.isEmpty()) {
+								System.out.println("salario bruto do funcionario não pode ser vazio ");
+								System.out.print("Digite salario bruto do funcionario: ");
+								salarioBruto = sc.nextLine();
+							
+							}
+							Funcionario.limpaTela(15);
+							
+							funcionario = new Funcionario( nome, Double.valueOf(salarioBruto), email);
 							funcionarios.add(funcionario);
 							System.out.println("=============================================================================");
 							
@@ -147,7 +160,7 @@ public class Program {
 								//System.out.println("=================== Funcionaios ativos  ==============================");
 								System.out.println("| id : "+i);
 								System.out.println("| Nome do Funcioário : "+funcio.getNome());
-								System.out.println("| Cargo : "+funcio.getEmail());
+								System.out.println("| Email : "+funcio.getEmail());
 								System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 								System.out.println("-----------------------------------------------------------------------");
 								
@@ -205,7 +218,7 @@ public class Program {
 						//System.out.println("=================== Funcionaios ativos  ==============================");
 						System.out.println("| id : "+i);
 						System.out.println("| Nome do Funcioário : "+funcio.getNome());
-						System.out.println("| Cargo : "+funcio.getEmail());
+						System.out.println("| Email : "+funcio.getEmail());
 						System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 						System.out.println("-----------------------------------------------------------------------");
 					
@@ -224,13 +237,80 @@ public class Program {
 							System.out.println("============== Funcionaio excluido com sucesso =========================");
 							System.out.println("| id : "+id);
 							System.out.println("| Nome do Funcioário : "+funcio.getNome());
-							System.out.println("| Cargo : "+funcio.getEmail());
+							System.out.println("| Email : "+funcio.getEmail());
 							System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 							System.out.println("-----------------------------------------------------------------------");
 							
 						}	
 				}
 				
+				break;
+			}
+			case "3":{
+				if(funcionarios.isEmpty()) {
+					System.out.println(" não existe funcionarios cadastrados para alterar!!");
+					System.out.println("escolha opçao 1 para cadastrar funcionario");
+					
+					
+				}else {
+					System.out.println("=================== Funcionaios ativos  ===============================");
+					for(int i = 0; i < funcionarios.size(); i++) {
+						Funcionario funcio = funcionarios.get(i);
+						//System.out.println("=================== Funcionaios ativos  ==============================");
+						System.out.println("| id : "+i);
+						System.out.println("| Nome do Funcioário : "+funcio.getNome());
+						System.out.println("| Email : "+funcio.getEmail());
+						System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
+						System.out.println("-----------------------------------------------------------------------");
+					
+					}
+					int id ;
+					String novoNome,novoEmail,novoSalarioBruto;
+					System.out.println("============ Informe id do Funcionaio para alterar =====================");
+					id = sc.nextInt();
+					sc.nextLine();
+					if(id >= funcionarios.size()) {
+					System.out.println("Id invalido ");	
+					}else {
+						
+						Funcionario funcio = funcionarios.get(id);
+						System.out.print("Digite nome do funcionario: ");
+						 novoNome = sc.nextLine();
+						while(novoNome.isEmpty()) {
+							System.out.println("nome do funcionario não pode ser vazio ");
+							System.out.print("Digite nome do funcionario: ");
+							novoNome = sc.nextLine();
+						}
+						System.out.print("Digite email do funcionario: ");
+						 novoEmail = sc.nextLine();
+						while(novoEmail.isEmpty()) {
+							System.out.println("email do funcionario não pode ser vazio ");
+							System.out.print("Digite email do funcionario: ");
+							novoEmail = sc.nextLine();
+						}
+						System.out.print("Digite salario bruto do funcionario: ");
+						novoSalarioBruto = sc.nextLine();
+						
+						while(novoSalarioBruto.isEmpty()) {
+							System.out.println("salario bruto do funcionario não pode ser vazio ");
+							System.out.print("Digite salario bruto do funcionario: ");
+							novoSalarioBruto = sc.nextLine();
+						
+						}
+						funcio.setNome(novoNome);
+						funcio.setEmail(novoEmail);
+						funcio.setSalarioBruto(Double.valueOf(novoSalarioBruto));
+							
+							
+							System.out.println("============== Funcionaio alterado com sucesso =========================");
+							System.out.println("| id : "+id);
+							System.out.println("| Nome do Funcioário : "+funcio.getNome());
+							System.out.println("| Email : "+funcio.getEmail());
+							System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
+							System.out.println("-----------------------------------------------------------------------");
+							
+						}	
+				}
 				break;
 			}
 			case "4":{

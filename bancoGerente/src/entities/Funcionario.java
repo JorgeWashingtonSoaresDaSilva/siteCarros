@@ -31,6 +31,9 @@ public class Funcionario {
 	public double getSalarioBruto() {
 		return salarioBruto;
 	}
+	public void setSalarioBruto(double salarioBruto) {
+		this.salarioBruto = salarioBruto;
+	}
 	
 	public String getEmail() {
 		return email;
