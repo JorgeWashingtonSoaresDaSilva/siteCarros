@@ -309,8 +309,6 @@ public class Program {
 							System.out.println("| Salário Bruto R$: "+String.format("%.2f", funcio.getSalarioBruto()));
 							System.out.println("-----------------------------------------------------------------------");
 							
-							
-							
 						}	
 				}
 				break;
