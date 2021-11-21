@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.center{
+    width: 1280px;
+    margin: 0px auto;
+}
+.header{
+    width: 100%;
+    height: 60px;
+    background-color: #3042ea;
+}
+div.menu a{
+   text-decoration: none;
+   color: black;
+}
+div.menu ul{
+    position: relative;
+    top:  4px;
+    text-align: right;
+    list-style-type: none;
+    
+}
+div.menu li{
+    display: inline-block;
+    font-size: 17px;
+    padding: 0 15px;
+}
+div.falecomigo a{
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    color: black;
+    margin-top: 10px;
+   
+   
+    
+}
+div.falecomigo{
+    width: 160px;
+    height: 50px;
+    background-color: #3042ea;
+    border-color: cornsilk;
+    border-style: solid;
+    border-radius: 28px;
+} 
+.falecomigo{
+    text-align: center;
+    margin-top: 320px;
+    margin-left: 600px;
+}
