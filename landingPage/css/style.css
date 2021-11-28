@@ -55,7 +55,7 @@ div.falecomigo{
 }
 div.tecnologias{
     width: 100%;
-    height: 388px;
+    height: 488px;
     margin-top: 55px;
     background-color: #3042ea;
 }
@@ -72,7 +72,7 @@ div.tec{
 }
 .listaTec{
     position: relative;
-    top:  4px;
+    top:  60px;
     text-align: center;
     list-style-type: none;
 }
@@ -107,4 +107,31 @@ div.projec{
     display: inline-block;
     font-size: 17px;
     padding: 0 55px;
+}
+div.contato{
+    width: 100%;
+    height: 388px;
+    margin-top: 55px;
+    background-color: #3042ea;
+}
+div.cont{
+    width: 220px;
+    height: 140px;
+    margin-top: 120px;
+    border-color: #3042ea;
+    border-style: solid;
+    border-radius: 34px;
+    background-color: #c4c4c4;
+    list-style-type: none;
+}
+.listaContato{
+    position: relative;
+    top:  4px;
+    text-align: center;
+    list-style-type: none;
+}
+.itemContato{
+    display: inline-block;
+    font-size: 17px;
+    padding: 0 80px;
 }
