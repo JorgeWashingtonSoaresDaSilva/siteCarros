@@ -135,3 +135,13 @@ div.cont{
     font-size: 17px;
     padding: 0 80px;
 }
+div.rodape{
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    background-color: #c4c4c4;
+}
+.footer{
+    text-align: center;
+    margin-top: 40px;
+}
