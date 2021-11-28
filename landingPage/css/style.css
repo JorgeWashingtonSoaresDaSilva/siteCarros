@@ -70,13 +70,13 @@ div.tec{
     background-color: #c4c4c4;
     list-style-type: none;
 }
-.lista{
+.listaTec{
     position: relative;
     top:  4px;
     text-align: center;
     list-style-type: none;
 }
-.item{
+.itemTec{
     display: inline-block;
     font-size: 17px;
     padding: 0 15px;
